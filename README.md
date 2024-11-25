@@ -1,6 +1,6 @@
 # Processador feito na matéria de Projetos Digitais. (Processor created as part of the Digital Projects course)
 ## Antonio da Ressurreição Filho, student in the second semester of Computer Science at the Federal University of Paraná (UFPR).
-## Professor: Doutor Giovanni Venâncio. [site](https://www.inf.ufpr.br/giovanni/) 
+## Professor: Dr. Giovanni Venâncio. [site](https://www.inf.ufpr.br/giovanni/) 
 
 ### Português:
 
