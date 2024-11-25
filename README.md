@@ -1,6 +1,6 @@
-# Processador feito na aula de Projetos Digitais.
-## Antonio da Ressurreição Filho, aluno do segundo período de Ciência da Computação da Universidade Federal do Paraná (UFPR).
-## Professor da matéria: Doutor Giovanni Venâncio. [site](https://www.inf.ufpr.br/giovanni/) 
+# Processador feito na matéria de Projetos Digitais. (Processor created as part of the Digital Projects course)
+## Antonio da Ressurreição Filho, student in the second semester of Computer Science at the Federal University of Paraná (UFPR).
+## Professor: Doutor Giovanni Venâncio. [site](https://www.inf.ufpr.br/giovanni/) 
 
 ### Português:
 
@@ -62,13 +62,78 @@ o arquivo "Tabela-Memória ROM dos Mux.png", que consiste basicamente nas instru
 
 ![](imagens/memórias_ROM.PNG)
 
-7. ***Outros arquivos:*** Os outros arquivos presentes nessa pasta são circuitos integrados que foram feitos com o intuitochegar nos circuitos acima mencionados. Lembrando: para que se veja todo o processador funcionando na plataforma ***"Digital"***, é
+6. ***Outros arquivos:*** Os outros arquivos presentes nessa pasta são circuitos integrados que foram feitos com o intuitochegar nos circuitos acima mencionados. Lembrando: para que se veja todo o processador funcionando na plataforma ***"Digital"***, é
 importante baixar todos os arquivos dessa pasta.
 
 ***Arquivo "Tabela-Memória ROM dos Mux.png":***
 
 Como dito anteriormente, esse arquivo consiste na tabela usada para se fazer a memória ROM que manda as informações para o Imediato, para o registrador onde se escreve, para os 2 registradores onde se leem e para o OPCODE que é usado na outra memória ROM para
 ativar e desativar os botões 1 e 0 dos multiplexadores do programa principal.
+
+### English:
+
+***File "TrabPD.pdf":***
+
+In this document the project instructions created by Dr. Giovanni Venâncio, a professor at the Federal University of Paraná, are presented. This file was used as a reference to develop the project, outlining its main idea: the implementation of a processor inspired by the MIPS architecture.
+
+***File "Codigo-C.c":***
+
+The file "Codigo-C.c" contains a C language code created by Dr. Giovanni Venâncio, a professor at the Federal University of Paraná. This code was later translated into another language and used in the processor's ROM memory to perform all operations, thereby demonstrating that the processor and all its circuits function correctly.
+
+***File "Relatório de Projetos.pdf":***
+
+This file contains a brief report I created regarding the implementations made during the project, specifically detailing my Arithmetic Logic Unit (ALU), which performs arithmetic operations, my Register Bank, and my main program. Besides, this file includes the translation of the C code, originally created by Dr. Giovanni Venâncio, into Assembly, binary (based on the OpCode table I developed in one of my ROM memories), and hexadecimal (following the same table mentioned earlier).
+
+***File "imagens":***
+
+This folder contains images of the main circuits from the main program of the processor inspired by the MIPS architecture.
+
+***File "trabalho_projetos.tgz":***
+
+This compressed .tgz file contains all the processor files, which were created using the Digital software and are saved in the .dig format.
+
+1. ***"Main.dig":*** This is the main program where all the other files are executed simultaneously. It allows us to visualize the correct functioning of the processor inspired by the MIPS architecture.
+   
+![](imagens/imagem_main.PNG)
+
+2. ***"Ula.dig":*** This file represents my Arithmetic Logic Unit (ALU), which performs AND, OR, XOR, multiplication, addition, subtraction, and shift operations between two 32-bit numbers (A and B). A multiplexer is connected to a 4-bit input, where each number represents a specific operation as follows (important detail: the most significant bit is unused, included only for proper alignment with the diagram in "TrabPD.pdf"):
+
+- 0000 = Adder.
+- 0001 = Subtractor.
+- 0010 = Multiplier.
+- 0011 = And.
+- 0100 = Or.
+- 0101 = Xor.
+- 0110 = Shifter.
+
+3. ***"banco_de_registradores.dig":*** This file contains my Register Bank, which includes 16 32-bit registers. It has an "enable" input, W, which acts as the activation button for the demultiplexer responsible for writing to the selected register. There is also an input D, connected to all registers, which specifies what will be read and forwarded to outputs A and B via the Register Bank. Additionally, there is a Clk input, which serves as the clock signal used in the main program.
+ 
+![](imagens/banco_de_resgistradores.PNG)
+
+4. ***"registrador_do_main.dig":*** This file essentially represents the adder for the Program Counter (PC), duplicated in the main program. These duplications allow the PC to either move to the next line (PC+1) or jump backward or forward based on conditional and unconditional jump operations. These duplicated circuits are connected in the main program to a multiplexer, which determines which one will execute the next operation based on the codes passed through the ROM memory.
+
+![](imagens/registrador_do_main.PNG)
+
+5. **ROM memories:*** These memories are among the most crucial circuits in the entire main program. Together, they execute the C code found in the file "Codigo-C.c," which was translated into Assembly language and detailed in "Relatório de Projetos.pdf." The ROMs organize which inputs need to be activated in the multiplexers of the main program. They are connected to the PC's 32-bit output and to a 4-bit OP-CODE that comes from one of them. Below, you can see the file "Tabela-Memória ROM dos Mux.png," which essentially shows the instructions used in the ROM memory to divide the Immediate value, the register to write to, the two registers to read from, and the OP-CODE based on the ROM memory controlling the multiplexers.
+
+![](imagens/memórias_ROM.PNG)
+
+6. ***Other files:*** The other files in this folder are integrated circuits that were designed to create the circuits mentioned above. Important note: To view the entire processor functioning correctly on the "Digital" platform, it is necessary to download all the files in this folder.
+
+***File "Tabela-Memória ROM dos Mux.png":***
+
+As previously mentioned, this file contains the table used to design the ROM memory. This memory sends instructions to the Immediate value, the register to write to, the two registers to read from, and the OP-CODE, which is used in another ROM memory to activate or deactivate the 1 and 0 buttons of the multiplexers in the main program.
+
+
+
+
+
+
+
+
+
+
+
 
 
 
